@@ -1,10 +1,7 @@
 package com.company;
 
 
-import javax.annotation.processing.FilerException;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -16,7 +13,7 @@ public class Main {
         final  String path1 = "src/com/company/tomsawyer.txt";
         HashMap<String, Integer> hashMap = new HashMap<>();
         FileIO.readFile(path1,hashMap);
-        
+
 
     }
 
