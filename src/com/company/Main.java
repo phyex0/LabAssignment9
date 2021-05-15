@@ -12,7 +12,6 @@ public class Main {
 	// write your code here
         HashMap<String, Integer> hashMap = new HashMap<>();
 
-
         final String path1 = "src/com/company/dyssy10.txt";
         final String path2 = "src/com/company/tomsawyer.txt";
         final String path3 = "src/com/company/totc.txt";
@@ -27,7 +26,6 @@ public class Main {
         FileIO.printCommons(hashMap);
 
         //System.out.println(mapToString(hashMap));
-
 
     }
 
@@ -59,22 +57,24 @@ class FileIO{
 
     public static void wordCounter(String path, HashMap<String,Integer>hashMap){
         List<String> list = readFile(path);
-        for(String word:list){
-            if(word != null){
-                if(hashMap.containsKey(word))
-                    hashMap.put(word,hashMap.get(word)+1);
-                else
-                    hashMap.put(word,1);
+        if(list != null)
+            for(String word:list){
+                if(word != null){
+                    if(hashMap.containsKey(word))
+                        hashMap.put(word,hashMap.get(word)+1);
+                    else
+                        hashMap.put(word,1);
 
+                }
             }
-        }
     }
 
 
     public static List<String> readFile(String path){
         List<String> list = new ArrayList<>();
-        File f= new File(path);
         try{
+
+            File f= new File(path);
             if(!f.exists())
                 f.createNewFile();
 
@@ -91,8 +91,8 @@ class FileIO{
 
         }catch(IOException exception){
             exception.printStackTrace();
-        }catch (IndexOutOfBoundsException exceptione){
-            exceptione.printStackTrace();
+        }catch (IndexOutOfBoundsException exception){
+            exception.printStackTrace();
         }catch (NullPointerException exception){
             exception.printStackTrace();
         }
